@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask MongoDB App</title>
+</head>
+<body>
+    <h1>Items</h1>
+    <ul>
+        {% for item in data %}
+            <li>{{ item['item'] }}</li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="item">
+        <button type="submit">Add Item</button>
+    </form>
+</body>
+</html>
